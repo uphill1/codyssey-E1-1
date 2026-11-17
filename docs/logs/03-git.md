@@ -35,6 +35,10 @@ branch.main.merge=refs/heads/main
 
 **관찰**: 설정은 여러 파일에서 합쳐져서 나오기 때문에 같은 키(`init.defaultbranch`, `credential.helper`)가 두 번씩 보인다(시스템 설정 + 내 홈의 `~/.gitconfig`). 아래쪽 `core.*`, `remote.*`, `branch.*`는 이 저장소의 `.git/config`에서 온 값이다. `user.name`/`user.email`은 커밋의 작성자 정보가 된다.
 
+아래 스크린샷은 이메일이 화면에 나오지 않도록 `git config --list | sed 's/^user.email=.*/user.email=<masked>/'`로 가려서 찍은 것이다.
+
+![git config 출력 (이메일 마스킹)](../screenshots/git-config.png)
+
 ---
 
 ## 2. 기본 브랜치 이름 확인 (init.defaultBranch)
@@ -86,8 +90,9 @@ $ git branch -a
 
 ## 5. GitHub 연동 화면
 
-GitHub 저장소 화면과 VS Code 연동 화면은 직접 캡처해 아래 경로에 저장한다.
+VS Code에서 GitHub 계정(`uphill1`)으로 로그인되어 있고, 이 저장소(`codyssey-e1-1`)를 열어 `docs/logs/03-git.md`를 편집하는 화면이다.
 
 - 파일: `docs/screenshots/github-vscode.png`
+- 계정 메뉴에 함께 보이던 다른 계정 정보는 붉은 칠로 가렸다.
 
 ![GitHub와 VS Code 연동 화면](../screenshots/github-vscode.png)
