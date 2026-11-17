@@ -64,7 +64,8 @@ codyssey-E1-1/
 - [x] Docker 볼륨 (컨테이너 삭제 후 데이터 유지 확인)
 - [x] Git 설정/원격/로그/브랜치 확인
 - [x] 스크린샷 3장: `port-mapping.png`, `bind-mount-before.png`, `bind-mount-after.png`
-- [ ] 스크린샷: `github-vscode.png` (GitHub/VS Code 연동 화면, 직접 캡처 예정)
+- [x] 스크린샷: `github-vscode.png` (GitHub/VS Code 연동 화면, 다른 계정 정보는 가림)
+- [x] 스크린샷: `git-config.png` (`git config --list` 출력, 이메일 마스킹)
 
 ## 5. 수행 내용 요약
 
@@ -241,6 +242,7 @@ Git은 내 컴퓨터에서 변경 이력을 관리하는 도구(버전 관리 �
 | 바인드 마운트 변경 전 (`http://localhost:8081`) | `docs/screenshots/bind-mount-before.png` |
 | 바인드 마운트 변경 후 (`http://localhost:8081`) | `docs/screenshots/bind-mount-after.png` |
 | GitHub / VS Code 연동 | `docs/screenshots/github-vscode.png` |
+| Git 설정 (`git config --list`, 이메일 마스킹) | `docs/screenshots/git-config.png` |
 
 **포트 매핑**
 
@@ -258,10 +260,15 @@ Git은 내 컴퓨터에서 변경 이력을 관리하는 도구(버전 관리 �
 
 ![GitHub와 VS Code 연동](docs/screenshots/github-vscode.png)
 
+**Git 설정 (이메일 마스킹)**
+
+![git config 출력](docs/screenshots/git-config.png)
+
 ## 10. 보안 점검 체크리스트
 
 - [x] 로그/문서/코드에 토큰, 비밀번호, API 키가 없다 (커밋 전 `grep`으로 확인)
 - [x] 이메일 주소를 기록하지 않았다 (`git config --list`의 `user.email`은 `<masked>`)
+- [x] 스크린샷에도 이메일이 보이지 않는다 (`git-config.png`는 `sed`로 마스킹, `github-vscode.png`는 계정 메뉴의 다른 계정 정보를 칠로 가림. 커밋 전에 이미지를 직접 열어 확인)
 - [x] `.gitignore`에 `.env`, `*.pem`, `*.key`, `.DS_Store`를 넣었다
 - [x] 원격 주소(`remote.origin.url`)에 인증 정보가 들어 있지 않다 (HTTPS 주소만 사용, 인증은 macOS 키체인)
 - [x] `git add .` 없이 파일을 하나씩 지정해서 추가했다
