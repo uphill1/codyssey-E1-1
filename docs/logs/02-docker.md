@@ -364,7 +364,7 @@ Accept-Ranges: bytes
 </html>
 ```
 
-**관찰**: `HTTP/1.1 200 OK`와 `Server: nginx`가 나오고, 본문에 내가 만든 `<title>Codyssey E1-1</title>`이 들어 있다. 컨테이너 안의 nginx가 호스트 8080 포트를 통해 응답하고 있다.
+**관찰**: `HTTP/1.1 200 OK`와 `Server: nginx`가 나오고, 본문에 내가 만든 `<title>Codyssey E1-1</title>`이 들어 있다. 컨테이너 안의 nginx가 호스트 8080 포트를 통해 응답하고 있다. (브라우저 화면: `docs/screenshots/port-mapping.png`)
 
 ---
 
