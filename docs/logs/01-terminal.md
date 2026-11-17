@@ -74,10 +74,13 @@ total 0
 ```bash
 $ mv docs/logs/01.terminal.md docs/logs/01-terminal.md
 $ ls -l docs/logs
-<여기에 실제 출력 붙여넣기>
+total 32
+-rw-r--r--@ 1 roy  staff  4309 11월 17 11:42 01-terminal.md
+-rw-r--r--@ 1 roy  staff  4714 11월 17 14:15 02-docker.md
+-rw-r--r--@ 1 roy  staff     0 11월 17 11:50 03-git.md
 ```
 
-**관찰**: `mv`는 같은 폴더 안에서 쓰면 이름 변경이 된다. 파일명 오타(`.` → `-`)를 이 명령으로 고쳤다.
+**관찰**: `mv`는 같은 폴더 안에서 쓰면 이름 변경이 된다. 파일명 오타(`.` → `-`)를 이 명령으로 고쳤다. (이 출력은 나중에 다시 실행한 결과라 `02-docker.md`, `03-git.md`도 함께 보이며, `01.terminal.md`가 없어지고 `01-terminal.md`로 바뀐 것을 확인할 수 있다.)
 
 ## 6~9. 복사 / 내용 확인 / 삭제 / 경로 이동 (cp, cat, rm, cd)
 
@@ -118,13 +121,16 @@ $ ls -l a.txt
 
 **변경 명령 / 변경 후**
 ```bash
+# 600: 소유자만 읽기/쓰기 가능하게 제한
 $ chmod 600 a.txt
 $ ls -l
 total 8
 -rw-------@ 1 roy  staff  6 11월 17 11:14 a.txt
+# 000: 모든 권한을 없애서 접근이 차단되는지 확인
 $ chmod 000 a.txt
 $ cat a.txt
 cat: a.txt: Permission denied
+# 644: 원래 권한(소유자 rw, 그 외 r)으로 원복
 $ chmod 644 a.txt
 ```
 
