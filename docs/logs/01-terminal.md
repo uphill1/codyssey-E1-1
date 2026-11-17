@@ -78,3 +78,30 @@ $ ls -l docs/logs
 ```
 
 **관찰**: `mv`는 같은 폴더 안에서 쓰면 이름 변경이 된다. 파일명 오타(`.` → `-`)를 이 명령으로 고쳤다.
+
+## 6~9. 복사 / 내용 확인 / 삭제 / 경로 이동 (cp, cat, rm, cd)
+
+**목적**: 연습용 폴더(`practice`)에서 파일 내용 확인, 복사, 삭제, 절대/상대 경로 이동을 실습한다.
+
+```bash
+$ mkdir -p practice && cd practice
+$ echo "hello" > a.txt
+$ cat a.txt
+hello
+$ cp a.txt b.txt
+$ ls -l
+total 16
+-rw-r--r--@ 1 roy  staff  6 11월 17 11:14 a.txt
+-rw-r--r--@ 1 roy  staff  6 11월 17 11:14 b.txt
+$ rm b.txt
+$ ls
+a.txt
+$ cd ~/dev/codyssey-E1-1
+$ cd practice
+```
+
+**관찰**:
+- `cat a.txt`로 파일 내용(`hello`)을 확인했다.
+- `cp`는 원본(`a.txt`)을 그대로 두고 사본(`b.txt`)을 만든다. `ls -l`에서 두 파일의 크기(6바이트)가 같다.
+- `rm b.txt` 후 `ls`에는 `a.txt`만 남았다. `rm`은 휴지통 없이 바로 삭제되므로 되돌릴 수 없다.
+- `cd ~/dev/codyssey-E1-1`은 `/`나 `~`부터 시작하는 **절대 경로**라서 어느 위치에서든 같은 곳으로 간다. `cd practice`는 현재 위치 기준의 **상대 경로**라서 위치가 다르면 에러가 난다.
